@@ -1,0 +1,46 @@
+body {
+  background-color: #fafafa;
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+}
+
+.sales-table {
+  border-collapse: collapse;
+  width: 80%;
+  background-color: #fff;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+caption {
+  caption-side: top;
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 10px 15px;
+}
+
+thead th {
+  background-color: #f3f3f3;
+  font-weight: bold;
+}
+
+tfoot th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+  text-align: right;
+}
+
+tfoot td, tfoot th:last-child {
+  background-color: #e8e8e8;
+  font-weight: bold;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
