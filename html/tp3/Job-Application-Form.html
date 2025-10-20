@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Application Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 20px;
+        }
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 600px;
+            margin: auto;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        fieldset {
+            border: 1px solid #ccc;
+            margin-bottom: 15px;
+            padding: 15px;
+            border-radius: 8px;
+        }
+        legend {
+            font-weight: bold;
+            padding: 0 10px;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            width: auto;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-top: 15px;
+            padding: 10px 20px;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        .small-note {
+            font-size: 0.85em;
+            color: #555;
+        }
+        .radio-group {
+            margin-top: 10px;
+        }
+        .radio-group label {
+            display: inline;
+            margin-right: 15px;
+        }
+        .radio-group input[type="radio"] {
+            width: auto;
+            margin-right: 5px;
+        }
+        input[type="checkbox"] {
+            width: auto;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Job Application Form</h1>
+
+    <form action="#" method="post">
+        <!-- Personal Information -->
+        <fieldset>
+            <legend>Personal Information</legend>
+
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" name="firstName" placeholder="FIRST NAME" 
+                   pattern="[A-Z0-9 ]{3,20}" required 
+                   title="Only uppercase letters, digits, and spaces, 3-20 characters">
+
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" name="lastName" placeholder="LAST NAME" 
+                   pattern="[A-Z0-9 ]{3,20}" required 
+                   title="Only uppercase letters, digits, and spaces, 3-20 characters">
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="example@domain.dz" 
+                   pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.dz$" required 
+                   title="Must be a valid Algerian (.dz) email">
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" placeholder="1234567890" required>
+        </fieldset>
+
+        <!-- Account Information -->
+        <fieldset>
+            <legend>Account Information</legend>
+
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" placeholder="Username" 
+                   pattern="[A-Za-z0-9._%+]{8,}" required 
+                   title="At least 8 characters; letters, numbers, '.', '_', '%', '+' allowed">
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Password" required>
+
+            <label for="confirmPassword">Confirm Password:</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" required>
+        </fieldset>
+
+        <!-- Address Information -->
+        <fieldset>
+            <legend>Address Information</legend>
+
+            <label for="streetAddress">Street Address:</label>
+            <input type="text" id="streetAddress" name="streetAddress" placeholder="Street Address" required>
+
+            <label for="city">City:</label>
+            <select id="city" name="city" required>
+                <option value="">Select a city</option>
+                <option value="algiers">Algiers</option>
+                <option value="oran">Oran</option>
+                <option value="constantine">Constantine</option>
+                <option value="annaba">Annaba</option>
+                <option value="blida">Blida</option>
+            </select>
+
+            <label for="zipCode">Zip/Postal Code:</label>
+            <input type="text" id="zipCode" name="zipCode" placeholder="12345" 
+                   pattern="[0-9]{5}" 
+                   title="5-digit postal code">
+        </fieldset>
+
+        <!-- Employment Details -->
+        <fieldset>
+            <legend>Employment Details</legend>
+
+            <label for="position">Position Applying For:</label>
+            <select id="position" name="position" required>
+                <option value="">Select a position</option>
+                <option value="developer">Software Developer</option>
+                <option value="designer">Designer</option>
+                <option value="manager">Manager</option>
+                <option value="analyst">Data Analyst</option>
+                <option value="other">Other</option>
+            </select>
+
+            <label for="experience">Years of Experience:</label>
+            <input type="number" id="experience" name="experience" min="0" max="50" placeholder="Years" required>
+
+            <label for="resume">Upload Resume:</label>
+            <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx">
+        </fieldset>
+
+        <!-- Availability -->
+        <fieldset>
+            <legend>Availability</legend>
+
+            <label for="startDate">Available Start Date:</label>
+            <input type="date" id="startDate" name="startDate" required>
+
+            <label>Are you willing to relocate?</label>
+            <div class="radio-group">
+                <label><input type="radio" name="relocate" value="yes" required> Yes</label>
+                <label><input type="radio" name="relocate" value="no"> No</label>
+            </div>
+        </fieldset>
+
+        <!-- Additional Information -->
+        <fieldset>
+            <legend>Additional Information</legend>
+
+            <label for="comments">Any Additional Comments or Questions:</label>
+            <textarea id="comments" name="comments" rows="4" placeholder="Enter your comments here..."></textarea>
+
+            <div style="margin-top: 10px;">
+                <input type="checkbox" id="newsletter" name="newsletter">
+                <label for="newsletter" style="display: inline;">Yes, sign me up!</label>
+                <span class="small-note"> Subscribe to Newsletter</span>
+            </div>
+        </fieldset>
+
+        <input type="submit" value="Submit Application">
+    </form>
+
+</body>
+</html>
